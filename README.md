@@ -1,4 +1,4 @@
-# Customer Churn Intelligence & Machine Learning Project
+# Customer Churn Intelligence: Enterprise Analysis & Strategy
 
 An end-to-end Data Science project analyzing customer churn, machine learning predictions with explainability, survival analysis, uplift modeling, Customer Lifetime Value (CLV) estimation, customer segmentation, and an interactive Streamlit retention dashboard.
 
@@ -7,37 +7,45 @@ An end-to-end Data Science project analyzing customer churn, machine learning pr
 ## 📁 Project Structure
 
 ```text
-├── Telco-Customer-Churn.csv     # Local copy of the Telco customer dataset
-├── customer_churn_project.py    # Complete Data Science & ML pipeline script
-├── app.py                       # Interactive Streamlit Web Application
-├── requirements.txt             # Required Python dependencies
-├── .gitignore                   # Git exclusion rules
-└── README.md                    # Project documentation
+├── Customer_Churn_Intelligence.ipynb # Complete professional Data Science notebook (Google Colab / Jupyter)
+├── Telco-Customer-Churn.csv         # Local copy of the Telco customer dataset
+├── customer_churn_project.py        # Complete Data Science & ML pipeline script
+├── app.py                           # Interactive Streamlit Web Application & ROI Simulator
+├── ARCHITECTURE_AND_API_DOCUMENTATION.md # Architecture diagrams, data dictionary & API specs
+├── requirements.txt                 # Required Python dependencies
+├── .gitignore                       # Git exclusion rules
+└── README.md                        # Project documentation
 ```
 
 ---
 
 ## 🚀 How to Run
 
-### 1. Install Dependencies
+### 1. Run in Google Colab / Jupyter Notebook
+Open and run **`Customer_Churn_Intelligence.ipynb`** in Google Colab or your local Jupyter environment. It contains all 8 parts with comprehensive markdown documentation, graph headings, observations, inferences, and conclusions.
+
+### 2. Install Dependencies Locally
 ```bash
 pip install -r requirements.txt
 ```
 
-### 2. Run the Machine Learning & Analytics Pipeline
-To execute the complete end-to-end data analysis and model training (EDA, LightGBM, SHAP, Lifelines, Uplift Modeling, CLV, K-Means Clustering):
+### 3. Run the Machine Learning & Analytics Pipeline Script
+To execute the complete end-to-end pipeline via terminal:
 
 ```bash
 python customer_churn_project.py
 ```
 
-### 3. Launch the Interactive Web Dashboard
+### 4. Launch the Interactive Web Dashboard
 To start the interactive Streamlit dashboard:
 
 ```bash
 streamlit run app.py
 ```
 This opens the web interface in your browser at `http://localhost:8501`.
+
+### 5. Architecture & API Specifications
+For detailed system flowcharts, 21-feature raw data dictionary, 30-feature encoded matrix, Python module contracts, and production REST API endpoints (FastAPI/OpenAPI), consult **[ARCHITECTURE_AND_API_DOCUMENTATION.md](file:///c:/Users/dubey/OneDrive/Desktop/DATA%20SCIENCE/ARCHITECTURE_AND_API_DOCUMENTATION.md)**.
 
 ---
 

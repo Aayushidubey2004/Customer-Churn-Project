@@ -85,10 +85,11 @@ print(df["Churn"].value_counts(normalize=True) * 100)
 
 # Churn Count Bar Plot
 plt.figure()
-df["Churn"].value_counts().plot(kind="bar", color=["skyblue", "salmon"])
-plt.title("Customer Churn Count")
-plt.xlabel("Churn")
+df["Churn"].value_counts().plot(kind="bar", color=["skyblue", "salmon"], edgecolor="black")
+plt.title("Customer Churn Count (Overall Distribution)")
+plt.xlabel("Churn Status")
 plt.ylabel("Number of Customers")
+plt.xticks(ticks=[0, 1], labels=["Retained (No)", "Churned (Yes)"], rotation=0)
 plt.tight_layout()
 plt.show()
 
@@ -102,11 +103,12 @@ print("\nChurn Percentage by Contract Type:")
 print(churn_by_contract)
 
 plt.figure()
-churn_by_contract.plot(kind="bar")
+churn_by_contract.plot(kind="bar", edgecolor="black")
 plt.title("Churn Percentage by Contract Type")
 plt.xlabel("Contract Type")
-plt.ylabel("Percentage of Customers")
+plt.ylabel("Percentage of Customers (%)")
 plt.xticks(rotation=0)
+plt.legend(["Retained (No)", "Churned (Yes)"], title="Churn Status")
 plt.tight_layout()
 plt.show()
 
@@ -232,12 +234,14 @@ else:
 print("SHAP values calculated successfully!")
 
 shap.summary_plot(shap_vals_to_plot, X_test, show=False)
-plt.title("SHAP Feature Summary Plot")
+plt.title("SHAP Feature Summary Plot (Directional Impact)")
+plt.xlabel("SHAP Value (Impact on Model Churn Prediction)")
 plt.tight_layout()
 plt.show()
 
 shap.summary_plot(shap_vals_to_plot, X_test, plot_type="bar", show=False)
-plt.title("SHAP Feature Importance (Bar)")
+plt.title("SHAP Feature Importance (Mean |SHAP Value|)")
+plt.xlabel("Mean |SHAP Value| (Average Feature Influence)")
 plt.tight_layout()
 plt.show()
 
